@@ -12,7 +12,7 @@ app.use(cors({
 
 app.get('/api', (req, res) => {
     res.send({
-        "data": "hello world!"
+        "data": "nonstop4 goodjob"
     })
 })
 
