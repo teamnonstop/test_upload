@@ -45,7 +45,7 @@ def login():
         else:
             # Account doesnt exist or username/password incorrect
             flash("Incorrect username/password!", "danger")
-    return render_template('auth/login.html',title="Login")
+    return render_template('login.html',title="Login")
 
 
 # http://localhost:5000/pythonlogin/register 
@@ -83,7 +83,7 @@ def register():
         # Form is empty... (no POST data)
         flash("Please fill out the form!", "danger")
     # Show registration form with message (if any)
-    return render_template('auth/register.html',title="Register")
+    return render_template('register.html',title="Register")
 
 # http://localhost:5000/pythinlogin/home 
 # This will be the home page, only accessible for loggedin users
@@ -93,7 +93,7 @@ def home():
     # Check if user is loggedin
     if 'loggedin' in session:
         # User is loggedin show them the home page
-        return render_template('home/home.html', username=session['username'],title="Home")
+        return render_template('home.html', username=session['username'],title="Home")
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))    
 
@@ -103,7 +103,7 @@ def profile():
     # Check if user is loggedin
     if 'loggedin' in session:
         # User is loggedin show them the home page
-        return render_template('auth/profile.html', username=session['username'],title="Profile")
+        return render_template('profile.html', username=session['username'],title="Profile")
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))  
 
